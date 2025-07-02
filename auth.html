@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login / Sign Up | Sonali Mutton Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('images/bg-meat.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .auth-container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 420px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: #7a0c0c;
+      margin-bottom: 20px;
+    }
+
+    .tab-switch {
+      display: flex;
+      margin-bottom: 20px;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 2px solid #7a0c0c;
+    }
+
+    .tab-switch button {
+      flex: 1;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .tab-switch .active {
+      background-color: #7a0c0c;
+      color: white;
+    }
+
+    .tab-switch .inactive {
+      background-color: white;
+      color: #7a0c0c;
+    }
+
+    .form-box {
+      display: none;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .form-box.active {
+      display: flex;
+    }
+
+    input, select, textarea, button {
+      margin-bottom: 15px;
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #7a0c0c;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #590000;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .otp-box {
+      display: none;
+    }
+
+    p {
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .link {
+      color: #7a0c0c;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <img src="images/logo.png" alt="Sonali Mutton Shop Logo" style="width: 100%; max-width: 250px; margin-bottom: 20px;" />
+    <div class="tab-switch">
+      <button id="loginTab" class="active" onclick="toggleForms('login')">Login</button>
+      <button id="signupTab" class="inactive" onclick="toggleForms('signup')">Signup</button>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form-box active" id="loginBox">
+      <label for="loginMethod">Login Method:</label>
+      <select id="loginMethod" onchange="toggleLoginMethod()">
+        <option value="otp">Login via OTP</option>
+        <option value="password">Login via Password</option>
+      </select>
+
+      <div id="loginViaOtp">
+        <input type="text" id="loginCredential" placeholder="Phone or Email" required />
+        <button onclick="sendOTP('login')">Send OTP</button>
+        <div class="otp-box" id="loginOtpBox">
+          <input type="text" id="loginOtpInput" placeholder="Enter 6-digit OTP" maxlength="6" />
+          <button onclick="verifyOTP('login')">Verify OTP</button>
+          <p id="loginResendText"></p>
+          <button onclick="resendOTP('login')" id="loginResendBtn" disabled>Resend OTP</button>
+        </div>
+      </div>
+
+      <div id="loginViaPassword" style="display:none;">
+        <input type="email" id="loginEmail" placeholder="Registered Email" />
+        <input type="password" id="loginPassword" placeholder="Password" />
+        <button onclick="verifyPasswordLogin()">Login</button>
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="rememberMe">
+        <label for="rememberMe">Remember Me</label>
+      </div>
+
+      <p>Don't have an account? <span class="link" onclick="toggleForms('signup')">Sign up here</span></p>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="form-box" id="signupBox">
+      <input type="text" id="signupName" placeholder="Full Name" required />
+      <input type="email" id="signupEmail" placeholder="Email ID" required />
+      <input type="tel" id="signupPhone" placeholder="Phone Number (+91)" required />
+      <input type="password" id="signupPassword" placeholder="Create Password" required />
+      <textarea id="signupAddress" placeholder="Delivery Address" required></textarea>
+
+      <label>Verify via:</label>
+      <select id="otpMethod">
+        <option value="email">Email</option>
+        <option value="phone">Phone</option>
+      </select>
+      <button onclick="sendOTP('signup')">Send OTP</button>
+
+      <div class="otp-box" id="signupOtpBox">
+        <input type="text" id="signupOtpInput" placeholder="Enter 6-digit OTP" maxlength="6" />
+        <button onclick="verifyOTP('signup')">Verify OTP</button>
+        <p id="signupResendText"></p>
+        <button onclick="resendOTP('signup')" id="signupResendBtn" disabled>Resend OTP</button>
+      </div>
+
+      <p>Already have an account? <span class="link" onclick="toggleForms('login')">Login here</span></p>
+    </div>
+  </div>
+
+  <script>
+    function toggleForms(form) {
+      document.getElementById('signupBox').classList.remove('active');
+      document.getElementById('loginBox').classList.remove('active');
+      document.getElementById('signupTab').classList.remove('active', 'inactive');
+      document.getElementById('loginTab').classList.remove('active', 'inactive');
+
+      if (form === 'signup') {
+        document.getElementById('signupBox').classList.add('active');
+        document.getElementById('signupTab').classList.add('active');
+        document.getElementById('loginTab').classList.add('inactive');
+      } else {
+        document.getElementById('loginBox').classList.add('active');
+        document.getElementById('loginTab').classList.add('active');
+        document.getElementById('signupTab').classList.add('inactive');
+      }
+    }
+
+    function toggleLoginMethod() {
+      const method = document.getElementById("loginMethod").value;
+      document.getElementById("loginViaOtp").style.display = (method === "otp") ? "block" : "none";
+      document.getElementById("loginViaPassword").style.display = (method === "password") ? "block" : "none";
+    }
+
+    function sendOTP(type) {
+      const otp = Math.floor(100000 + Math.random() * 900000);
+      localStorage.setItem(`${type}_otp`, otp);
+      alert(`OTP sent: ${otp}`);
+      document.getElementById(`${type}OtpBox`).style.display = 'block';
+      startResendTimer(type);
+    }
+
+    function verifyOTP(type) {
+      const input = document.getElementById(`${type}OtpInput`).value;
+      const expected = localStorage.getItem(`${type}_otp`);
+
+      if (type === "signup") {
+        const user = {
+          name: document.getElementById("signupName").value,
+          email: document.getElementById("signupEmail").value,
+          phone: document.getElementById("signupPhone").value,
+          address: document.getElementById("signupAddress").value,
+          password: document.getElementById("signupPassword").value
+        };
+        localStorage.setItem("user", JSON.stringify(user));
+        alert("Signup successful ✅");
+        toggleForms("login");
+      } else {
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+        const inputCredential = document.getElementById("loginCredential").value;
+        const isCredentialMatch = inputCredential === storedUser.email || inputCredential === storedUser.phone;
+        const isOtpMatch = input === expected;
+
+        if (isCredentialMatch && isOtpMatch) {
+          alert("Login successful ✅");
+          if (document.getElementById('rememberMe')?.checked) {
+            localStorage.setItem('rememberUser', 'true');
+          }
+          window.location.href = 'index.html';
+        } else {
+          alert("Invalid credentials or OTP ❌");
+        }
+      }
+    }
+
+    function verifyPasswordLogin() {
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+      const storedUser = JSON.parse(localStorage.getItem("user"));
+
+      if (storedUser && email === storedUser.email && password === storedUser.password) {
+        alert("Login successful ✅");
+        if (document.getElementById('rememberMe')?.checked) {
+          localStorage.setItem('rememberUser', 'true');
+        }
+        window.location.href = 'index.html';
+      } else {
+        alert("Incorrect email or password ❌");
+      }
+    }
+
+    function resendOTP(type) {
+      sendOTP(type);
+    }
+
+    function startResendTimer(type) {
+      const resendBtn = document.getElementById(`${type}ResendBtn`);
+      const resendText = document.getElementById(`${type}ResendText`);
+      let time = 30;
+      resendBtn.disabled = true;
+      resendText.textContent = `Resend available in ${time}s`;
+      const interval = setInterval(() => {
+        time--;
+        resendText.textContent = `Resend available in ${time}s`;
+        if (time <= 0) {
+          clearInterval(interval);
+          resendText.textContent = '';
+          resendBtn.disabled = false;
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
