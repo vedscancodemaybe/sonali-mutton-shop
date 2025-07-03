@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout | Sonali Mutton Shop</title>
+  <link rel="stylesheet" href="css/checkout.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">
+ <h1>सोनाली मटन शॉप 🐑</h1>
+
+</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <section class="checkout-section">
+    <h1>Complete Your Order</h1>
+
+    <form id="checkoutForm">
+      <div class="user-info">
+        <h2>Contact Info</h2>
+        <label>Registered Mobile Number:</label>
+        <input type="text" id="registeredPhone" disabled value="+91 9876543210">
+
+        <label>Deliver to Someone Else?</label>
+        <input type="tel" id="alternatePhone" placeholder="Enter alternate +91 mobile number">
+        <span id="phoneError" class="error-msg"></span>
+      </div>
+
+      <div class="address-section">
+        <h2>Delivery Address</h2>
+        <select id="savedAddress">
+          <option value="">-- Select Saved Address --</option>
+          <option value="123 Lamb Street, Mumbai">123 Lamb Street, Mumbai</option>
+          <option value="74 Curry Lane, Pune">74 Curry Lane, Pune</option>
+        </select>
+
+        <label>Or Enter New Address:</label>
+        <textarea id="newAddress" placeholder="Enter full delivery address"></textarea>
+      </div>
+
+      <div class="billing-section">
+        <h2>Billing Details</h2>
+        <div id="cartSummary"></div>
+        <label for="distance">Enter Distance (in km):</label>
+        <input type="number" id="distance" min="1" value="5">
+        <p>Delivery Charges: ₹<span id="deliveryCharge">50</span></p>
+        <h3>Total: ₹<span id="finalTotal">0</span></h3>
+      </div>
+
+      <div class="payment-section">
+        <h2>Payment Method</h2>
+        <label for="paymentMethod">Select Payment Method:</label>
+        <select id="paymentMethod" required>
+          <option value="">-- Choose Payment Method --</option>
+          <option value="UPI">UPI (QR Code)</option>
+          <option value="Card">Card</option>
+          <option value="COD">Cash / Online Payment on Delivery</option>
+        </select>
+      </div>
+
+      <button type="submit" class="place-order-btn">Place Order</button>
+    </form>
+  </section>
+
+<script src="js/checkout.js"></script>
+
+</body>
+</html>

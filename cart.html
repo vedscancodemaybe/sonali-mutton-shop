@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart | Sonali Mutton Shop</title>
+  <link rel="stylesheet" href="css/cart.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="main-header">
+    <h1>सोनाली मटन शॉप 🐑</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Order More</a>
+      <a href="auth.html">Login</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Cart Section -->
+  <section class="cart-section">
+    <h1>Your Cart</h1>
+    <div id="cartContainer"></div>
+    <div class="summary">
+  <h2>Total: ₹<span id="totalAmount">0</span></h2>
+  <a href="order.html" class="checkout-btn">Proceed to Checkout</a>
+  <button onclick="clearCart()" class="clear-btn">Clear Cart 🧹</button>
+</div>
+  </section>
+
+  <script src="js/cart.js"></script>
+</body>
+</html>

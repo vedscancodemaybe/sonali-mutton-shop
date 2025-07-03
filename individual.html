@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customize Your Individual Pack | Sonali Mutton Shop</title>
+  <link rel="stylesheet" href="css/cuts.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">
+  <h1>सोनाली मटन शॉप 🐑</h1>
+
+</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Order</a>
+      <select id="languageSwitcher">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+      </select>
+    </nav>
+  </header>
+
+  <section class="cut-selector">
+    <h1>Customize Your Individual Pack</h1>
+    <div class="weight-input">
+      <label for="netWeight">Select Net Weight of Lamb (grams):</label>
+      <input type="number" id="netWeight" min="500" step="50" placeholder="e.g., 1000">
+    </div>
+
+    <div class="cuts-container" id="cutsContainer">
+      <!-- CUTS WILL LOAD HERE VIA JS -->
+    </div>
+
+    <div class="summary-box">
+      <p><strong>Total Selected:</strong> <span id="totalSelected">0</span>g</p>
+      <p id="weightStatus"></p>
+      <button id="addToCartBtn" disabled>Add to Cart</button>
+    </div>
+  </section>
+
+  <script src="js/cuts.js"></script>
+</body>
+</html>
