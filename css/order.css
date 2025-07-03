@@ -1,0 +1,145 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fefcf9;
+  color: #333;
+  padding: 2rem 1rem;
+}
+
+/* Header */
+.main-header {
+  background-color: #7a0c0c;
+  color: white;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-header .logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.main-header nav a {
+  margin-left: 1.5rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+}
+.main-header nav a:hover {
+  color: #ffdede;
+}
+
+/* Order Section */
+.order-section {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* Section Titles */
+.order-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #7a0c0c;
+}
+.order-section h3 {
+  margin-top: 2rem;
+  color: #7a0c0c;
+}
+
+/* Address / Contact Inputs */
+.order-section input,
+.order-section textarea,
+.order-section select {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1rem;
+  margin: 0.5rem 0 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.order-section textarea {
+  resize: vertical;
+}
+
+/* Payment Method Dropdown */
+.payment-method {
+  margin-top: 1rem;
+}
+.payment-method select {
+  background-color: #fff;
+}
+
+/* Billing Summary */
+.billing-box {
+  margin-top: 2rem;
+  background: #fff5f5;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+.billing-box p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+.billing-box strong {
+  float: right;
+}
+
+/* UPI/Card Sections */
+.payment-fields {
+  margin-top: 1rem;
+}
+.payment-fields input {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Place Order Button */
+.place-btn {
+  display: block;
+  width: 100%;
+  background-color: #7a0c0c;
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.place-btn:hover {
+  background-color: #590000;
+}
+
+/* Cart Items List */
+#cartItems {
+  margin-top: 1rem;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+  font-size: 0.95rem;
+}
+.cart-item span {
+  color: #7a0c0c;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .order-section {
+    padding: 1.5rem 1rem;
+  }
+}

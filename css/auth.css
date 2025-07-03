@@ -1,0 +1,155 @@
+/* Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fefcf9;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url('images/bg-meat.jpg'); /* Optional custom background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Auth Container */
+.auth-container {
+  background: rgba(255, 255, 255, 0.96);
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+/* Toggle Tabs */
+.tab-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.tab-toggle button {
+  flex: 1;
+  padding: 12px 0;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  background: #fff;
+  color: #7a0c0c;
+  border: 2px solid #7a0c0c;
+  border-right: none;
+}
+.tab-toggle button:last-child {
+  border-right: 2px solid #7a0c0c;
+}
+.tab-toggle button.active {
+  background: #7a0c0c;
+  color: white;
+}
+
+/* Forms */
+.form-box {
+  display: none;
+}
+.form-box.active {
+  display: block;
+}
+
+.form-box h2 {
+  margin-bottom: 1rem;
+  color: #7a0c0c;
+  text-align: center;
+}
+
+.form-box input,
+.form-box textarea,
+.form-box select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.form-box textarea {
+  resize: none;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 30px;
+  border: none;
+  background-color: #7a0c0c;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.form-box button:hover {
+  background-color: #590000;
+}
+
+/* OTP Box */
+.otp-box {
+  margin-top: 1rem;
+}
+
+#signupResendText,
+#loginResendText {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+/* Remember Me & Toggle */
+.remember-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 15px;
+}
+.remember-row input {
+  margin: 0;
+}
+.remember-row label {
+  font-size: 0.95rem;
+}
+
+/* Forgot Password / Link Toggle */
+.form-box p {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+.form-box a {
+  color: #7a0c0c;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+.form-box a:hover {
+  text-decoration: underline;
+}
+
+/* Dropdown login method */
+#loginMethod {
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 2rem 1.2rem;
+  }
+}

@@ -1,0 +1,118 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: url('https://videos.openai.com/vg-assets/assets%2Ftask_01jz3g3ts7ebwrhjbpbv9xzndq%2F1751390603_img_1.webp?st=2025-07-01T15%3A54%3A19Z&se=2025-07-07T16%3A54%3A19Z&sks=b&skt=2025-07-01T15%3A54%3A19Z&ske=2025-07-07T16%3A54%3A19Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=p6PCZVbq0ecDOYxiS7BhtZ77TvnOsNGDDWgCUuHvH58%3D&az=oaivgprodscus') no-repeat center center fixed;
+  background: #fff8f5;
+  color: #333;
+}
+
+.main-header {
+  background: #7a0c0c;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header .logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+}
+
+.main-header nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.checkout-section {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.checkout-section h1 {
+  color: #7a0c0c;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+form h2 {
+  color: #7a0c0c;
+  margin-top: 30px;
+  font-size: 1.2rem;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+#error-msg {
+  color: red;
+  font-size: 0.9rem;
+}
+
+#cartSummary {
+  background: #f7f7f7;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.place-order-btn {
+  background: #7a0c0c;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.place-order-btn:hover {
+  background: #590000;
+}
+
+.checkout-item {
+  background: #f9f9f9;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.cut-breakdown {
+  margin: 5px 0 0 15px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.cut-breakdown li {
+  list-style: disc;
+}
