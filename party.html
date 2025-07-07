@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Party Pack | Sonali Mutton Shop</title>
+  <link rel="stylesheet" href="css/party.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="main-header">
+  <div class="logo">🐑 Sonali Mutton Shop</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="cart.html">Cart</a>
+    <a href="auth.html">Login</a>
+  </nav>
+</header>
+
+<section class="party-pack">
+  <h1>🎉 Party Pack</h1>
+  <p>Choose your curated mutton sets for events and celebrations. Minimum order: <strong>5 KG</strong></p>
+
+  <div class="weight-input">
+    <label for="netWeight">Enter Total Desired Weight (KG):</label>
+    <input type="number" id="netWeight" min="5" step="0.5" value="5" />
+  </div>
+
+  <div class="set-grid" id="setGrid"></div>
+
+  <div class="summary-box">
+    <p><strong>Total Selected Weight:</strong> <span id="selectedWeight">0</span> KG</p>
+    <p id="weightStatus"></p>
+    <button id="addToCartBtn" disabled>Add to Cart</button>
+  </div>
+</section>
+
+<script src="js/party.js"></script>
+</body>
+</html>

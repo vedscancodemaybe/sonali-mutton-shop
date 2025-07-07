@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restaurant Pack | Sonali Mutton Shop</title>
+  <link rel="stylesheet" href="css/restaurant.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="main-header">
+  <div class="logo">🐑 Sonali Mutton Shop</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="cart.html">Cart</a>
+    <a href="auth.html">Login</a>
+  </nav>
+</header>
+
+<section class="restaurant-pack">
+  <h1>🍽️ Restaurant Bulk Orders</h1>
+  <p>Ideal for hotels, caterers & food chains. High-grade, pre-portioned mutton in bulk.</p>
+
+  <div class="option-box">
+    <label><input type="radio" name="type" value="whole" checked> Whole Lamb (~20 KG)</label>
+    <label><input type="radio" name="type" value="half"> Half Lamb (~10 KG)</label>
+    <label><input type="radio" name="type" value="custom"> Custom (min 10 KG)</label>
+  </div>
+
+  <div class="quantity-box" id="unitBox">
+    <label>How many units?</label>
+    <input type="number" id="unitCount" value="1" min="1">
+  </div>
+
+  <div class="quantity-box" id="customBox" style="display:none">
+    <label>Enter custom quantity in KG (min 10 KG):</label>
+    <input type="number" id="customKg" value="10" min="10">
+  </div>
+
+  <textarea id="instructions" placeholder="Special Instructions (e.g., curry cut, vacuum pack)"></textarea>
+
+  <div class="summary">
+    <p><strong>Estimated Total:</strong> ₹<span id="totalAmt">0</span></p>
+    <button id="addToCartBtn">Add to Cart</button>
+  </div>
+
+  <p class="helpline">Need more than 50 KG? <a href="tel:+919158255459">Call us directly</a></p>
+</section>
+
+<script src="js/restaurant.js"></script>
+</body>
+</html>
