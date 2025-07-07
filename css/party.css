@@ -1,0 +1,127 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fefcf9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+.main-header {
+  background-color: #7a0c0c;
+  color: white;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-header .logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+}
+.main-header nav a {
+  margin-left: 1.5rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+}
+.main-header nav a:hover {
+  color: #ffdede;
+}
+.party-pack {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.party-pack h1 {
+  font-size: 2.5rem;
+  color: #7a0c0c;
+  font-family: 'Playfair Display', serif;
+}
+.weight-input {
+  margin: 1.5rem auto;
+  max-width: 400px;
+  background: #fff5f5;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+.weight-input input {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+}
+.set-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.set-card {
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  width: 280px;
+  padding: 1.2rem;
+  transition: transform 0.3s ease;
+}
+.set-card:hover {
+  transform: translateY(-5px);
+}
+.set-card h3 {
+  color: #7a0c0c;
+}
+.set-card p {
+  font-style: italic;
+  font-size: 0.9rem;
+}
+.set-card ul {
+  padding-left: 1rem;
+  text-align: left;
+}
+.qty-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0.8rem;
+}
+.qty-selector button {
+  background: #7a0c0c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.qty-selector input {
+  width: 40px;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 6px;
+}
+.summary-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #fff5f5;
+  border-radius: 10px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.summary-box button {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1rem;
+  background-color: #7a0c0c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+.summary-box button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

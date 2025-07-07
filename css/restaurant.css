@@ -1,0 +1,78 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fefcf9;
+  margin: 0;
+  padding: 0;
+}
+.main-header {
+  background-color: #7a0c0c;
+  color: white;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+.restaurant-pack {
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+.restaurant-pack h1 {
+  color: #7a0c0c;
+  font-size: 2.2rem;
+}
+.option-box {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: start;
+}
+.option-box label {
+  font-weight: bold;
+}
+.quantity-box {
+  margin: 1.5rem 0;
+  text-align: left;
+}
+.quantity-box input {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  margin-top: 8px;
+}
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+.summary {
+  margin-top: 2rem;
+  font-weight: bold;
+}
+#addToCartBtn {
+  background-color: #7a0c0c;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.helpline {
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+.helpline a {
+  color: #7a0c0c;
+  font-weight: bold;
+}
