@@ -4,35 +4,35 @@ const sets = [
     weight: 1,
     items: ["Small Intestine", "Large Intestine", "Fatty Bits"],
     desc: "Perfect for rich traditional dishes with flavorful fats.",
-    img: "images/intestine.png"
+    img: "intestine.png"
   },
   {
     name: "Loin Set",
     weight: 1.5,
     items: ["Loin Chops", "Rolled Loin", "Loin Flank"],
     desc: "Tender and juicy — ideal for pan fry or BBQ nights.",
-    img: "images/loin.png"
+    img: "loin.png"
   },
   {
     name: "Shoulder Set",
     weight: 1.5,
     items: ["Shoulder", "Shoulder Chops", "Neck"],
     desc: "Balanced meat-to-bone ratio — best for gravies.",
-    img: "images/shoulder.png"
+    img: "shoulder.png"
   },
   {
     name: "Liver Combo",
     weight: 1,
     items: ["Lamb Liver", "Kidney", "Heart"],
     desc: "Iron-rich organ meats — perfect for healthy meals.",
-    img: "images/liver.png"
+    img: "liver.png"
   },
   {
     name: "Stew Special",
     weight: 2,
     items: ["Stew Meat", "Shank", "Bone Pieces"],
     desc: "Slow-cook ready combo for winter stews or curries.",
-    img: "images/stew.png"
+    img: "stew.png"
   }
 ];
 
